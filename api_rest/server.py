@@ -1,11 +1,7 @@
-from flask import Flask # importar a 
+from flask import Flask
+from app import create_app  # Importa a factory function
 
-server = Flask(__name__)
-
-@server.route('/')
-
-def root():
-    return'<h1>Hello Word</h1>'
+app = create_app()  # Cria a instância da aplicação
 
 if __name__ == '__main__':
-    server.run()
+    app.run(debug=True)  # Executa em modo de desenvolvimento
